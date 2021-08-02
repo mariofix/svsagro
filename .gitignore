@@ -3,6 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Project Specific
+poetry.lock
+.vscode
+cthulhu/settings.py
+
 # C extensions
 *.so
 

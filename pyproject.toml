@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "svsagro"
+version = "0.0.1"
+description = "SVS Agro's Playground"
+authors = ["Mario Hernandez <yo@mariofix.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.5"
+django-baton = "^2.2.1"
+django-debug-toolbar = "^3.2.1"
+django-logentry-admin = "^1.1.0"
+thankyou = "^0.0.1"
+PyMySQL = "^1.0.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = "*"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
