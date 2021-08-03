@@ -12,6 +12,7 @@ django-debug-toolbar = "^3.2.1"
 django-logentry-admin = "^1.1.0"
 thankyou = "^0.0.1"
 PyMySQL = "^1.0.2"
+django-markdownx = "^3.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
