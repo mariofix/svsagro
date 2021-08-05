@@ -3,7 +3,7 @@ from thankyou import give_thanks
 from django.contrib.auth.views import LoginView
 from .forms import CoreUserCreationForm
 from .models import CoreUser
-
+from .utils import get_menus
 
 def index(request):
     return redirect("/login")
@@ -43,7 +43,9 @@ def dashboard(request):
     if request.user != "AnonymousUser":
         print(request.user.email)
         print(request.user.is_active)
-    return render(request, "core/dashboard.html")
+    context = {"modulos": get_menus()}
+    return render(request, "core/dashboard.html", context)
+
 
 
 def profile(request):

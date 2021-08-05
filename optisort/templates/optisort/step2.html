@@ -1,0 +1,76 @@
+{% extends 'core/template_base.html' %}
+{% load static %}
+
+{% block title %}Paso 2 - Parametros Detallados{% endblock %}
+
+{% block maincontent %}
+<div class="title-block">
+    <h3 class="title"> Parametros Detallados </h3>
+    <p class="title-description"> En esta pantalla podrá ingresar los parametros detallados de cada una de sus clasificaciones. </p>
+</div>
+<section class="section">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-block">
+                    <h3><small>Incluir:</small></h3>
+                    <div>
+                        <button type="button" class="btn btn-secondary">Dobles</button> <button type="button" class="btn btn-secondary">Descarte</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <td>Descripcion</td>
+                                    <td># Salida(s)</td>
+                                    <td>Largo (mm)</td>
+                                    <td>Diametro (mm)</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="text" class="form-control" value="Dobles">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" value="1">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" value="0-999">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" value="0-99">
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-danger" onclick="this.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode);"><em class="fa fa-times"></em></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" class="form-control" value="Small"></td>
+                                    <td><input type="text" class="form-control" value="2-3"></td>
+                                    <td>
+                                        <input type="text" class="form-control" value="90-120">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" value="0-99">
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-primary" onclick="this.parentNode.parentNode.parentNode.parentNode.appendChild(this.parentNode.parentNode.parentNode.cloneNode(true));"><em class="fa fa-check"></em></button>
+                                            <button type="button" class="btn btn-danger" onclick="this.parentNode.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode.parentNode);"><em class="fa fa-times"></em></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="card-footer"> <button type="button" id="asp-green" class="btn btn-primary btn-lg btn-block">Guardar</button> </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

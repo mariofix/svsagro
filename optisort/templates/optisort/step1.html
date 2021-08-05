@@ -1,0 +1,112 @@
+{% extends 'core/template_base.html' %}
+{% load static %}
+
+{% block title %}Paso 1 - Parametros Generales{% endblock %}
+
+{% block maincontent %}
+<div class="title-block">
+    <h3 class="title"> Parametros Generales </h3>
+    <p class="title-description"> En esta parte seleccionará los parametros generales de sus esparragos. </p>
+</div>
+<section class="section">
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="header-block">
+                        <p class="title"> Verde </p>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <p><img src="{% static 'optisort/green.webp' %}" width="300" height="300"></p>
+                </div>
+                <div class="card-footer"> <button type="button" id="asp-green" onclick="selecciona(this);" class="btn btn-secondary btn-lg btn-block">Seleccionar</button> </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="header-block">
+                        <p class="title"> Blanco </p>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <p><img src="{% static 'optisort/white.webp' %}" width="300" height="300"></p>
+                </div>
+                <div class="card-footer"> <button type="button" id="asp-white" onclick="selecciona(this);" class="btn btn-secondary btn-lg btn-block">Seleccionar</button> </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card card-default">
+                <div class="card-header">
+                    <div class="header-block">
+                        <p class="title"> Caracteristicas </p>
+                    </div>
+                </div>
+                <div class="card-block">
+                    <div class="form-group">
+                        <label class="control-label">Caracteristicas físicas:</label>
+                        <div>
+                            <label>
+                                <input class="checkbox rounded" checked type="checkbox">
+                                <span>Largo</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" checked type="checkbox">
+                                <span>Diametro</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" type="checkbox">
+                                <span>Curvatura/Forma en S</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" type="checkbox">
+                                <span>Flor</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" type="checkbox">
+                                <span>Ovalidad</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" type="checkbox">
+                                <span>Forma Maza</span>
+                            </label>
+                        </div>
+                        <label class="control-label">Desviaciones de color: </label>
+                        <div>
+                            <label>
+                                <input class="checkbox rounded" type="checkbox">
+                                <span>Color Verde</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" checked type="checkbox">
+                                <span>Color Violeta</span>
+                            </label>
+                            <label>
+                                <input class="checkbox rounded" type="checkbox">
+                                <span>Color Oxido</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer"> <a href="{% url 'step2' %}" type="button" class="btn btn-primary float-right btn-lg">Continuar</a> </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function selecciona(object) {
+        object.classList.remove('btn-secondary');
+        object.classList.add('btn-primary');
+        if (object.id == 'asp-green'){
+            var other = document.getElementById('asp-white');
+        } else {
+            var other = document.getElementById('asp-green');
+        }
+        other.classList.add('btn-secondary');
+        other.classList.remove('btn-primary');
+    }
+    </script>
+{% endblock %}
